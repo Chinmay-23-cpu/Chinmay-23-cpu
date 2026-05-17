@@ -83,36 +83,53 @@ Learning:
 
 ## 🚀 Featured Projects
 
-### 📘 Smart Dictionary
+<table>
+<tr>
 
-A student-friendly **offline dictionary desktop application** built using **Python + CustomTkinter**, designed to provide a clean and intuitive vocabulary learning experience — even without internet.
+<td width="33%" valign="top" align="center">
 
-🔗 Repo:
-[https://github.com/Chinmay-23-cpu/Smart-Dictionary](https://github.com/Chinmay-23-cpu/Smart-Dictionary)
+<img src="./assets/457245622-cf11104f-a825-432d-9901-a7b16d2de7df.png" width="90%" height="180"/>
 
-<img src="./assets/457245622-cf11104f-a825-432d-9901-a7b16d2de7df.png" width="100%" />
+<h3>📘 Smart Dictionary</h3>
 
----
+<p align="center">
+A student-friendly <b>offline dictionary desktop application</b> built using <b>Python + CustomTkinter</b>.
+</p>
 
-### 🌾 AgriSmart
+🔗 <a href="https://github.com/Chinmay-23-cpu/Smart-Dictionary">Repo</a>
 
-A platform designed for **farmers**, aiming to make agricultural resources and information more accessible.
+</td>
 
-🔗 Repo:
-[https://github.com/Chinmay-23-cpu/AgriSmart](https://github.com/Chinmay-23-cpu/AgriSmart)
+<td width="33%" valign="top" align="center">
 
-<img src="./assets/Screenshot 2025-12-04 163100.png" width="100%" />
+<img src="./assets/Screenshot 2025-12-04 163100.png" width="90%" height="180"/>
 
----
+<h3>🌾 AgriSmart</h3>
 
-### 🌍 Global Monitoring System
+<p align="center">
+A platform designed for <b>farmers</b>, making agricultural resources more accessible.
+</p>
 
-A **global threat monitoring system** that monitors major events happening around the world within a **24-hour timeframe**.
+🔗 <a href="https://github.com/Chinmay-23-cpu/AgriSmart">Repo</a>
 
-🔗 Repo:
-[https://github.com/Chinmay-23-cpu/globalthreat2.0](https://github.com/Chinmay-23-cpu/globalthreat2.0)
+</td>
 
-<img src="./assets/Untitled.jpeg" width="100%" />
+<td width="33%" valign="top" align="center">
+
+<img src="./assets/Untitled.jpeg" width="90%" height="180"/>
+
+<h3>🌍 Global Monitoring System</h3>
+
+<p align="center">
+A <b>global threat monitoring system</b> monitoring world events within a <b>24-hour timeframe</b>.
+</p>
+
+🔗 <a href="https://github.com/Chinmay-23-cpu/globalthreat2.0">Repo</a>
+
+</td>
+
+</tr>
+</table>
 
 ---
 
