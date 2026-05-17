@@ -90,6 +90,8 @@ A student-friendly **offline dictionary desktop application** built using **Pyth
 🔗 Repo:
 [https://github.com/Chinmay-23-cpu/Smart-Dictionary](https://github.com/Chinmay-23-cpu/Smart-Dictionary)
 
+<img src="./assets/457245622-cf11104f-a825-432d-9901-a7b16d2de7df.png" width="100%" />
+
 ---
 
 ### 🌾 AgriSmart
@@ -99,6 +101,8 @@ A platform designed for **farmers**, aiming to make agricultural resources and i
 🔗 Repo:
 [https://github.com/Chinmay-23-cpu/AgriSmart](https://github.com/Chinmay-23-cpu/AgriSmart)
 
+<img src="./assets/Screenshot 2025-12-04 163100.png" width="100%" />
+
 ---
 
 ### 🌍 Global Monitoring System
@@ -107,6 +111,8 @@ A **global threat monitoring system** that monitors major events happening aroun
 
 🔗 Repo:
 [https://github.com/Chinmay-23-cpu/globalthreat2.0](https://github.com/Chinmay-23-cpu/globalthreat2.0)
+
+<img src="./assets/Untitled.jpeg" width="100%" />
 
 ---
 
