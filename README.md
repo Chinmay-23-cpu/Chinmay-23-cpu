@@ -10,7 +10,7 @@ Aspiring Software Engineer | Turning caffeine into code
 
 <img 
 src="https://gifdb.com/images/high/hyouka-pencil-test-school-bored-kstl858wtmml74uc.webp" 
-width="500"
+width="380"
 />
 
 </div>
