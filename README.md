@@ -1,19 +1,24 @@
-
-<h1 align="center">Hey there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"> I'm Chinmay</h1>
+<h1 align="center">
+Hey there 
+<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35">
+I'm Chinmay
+</h1>
 
 <h3 align="center">
-Aspiring Software Engineer | Turning caffeine into code 
+Aspiring Software Engineer | Turning caffeine into code
 <img src="https://ugokawaii.com/wp-content/uploads/2022/10/hot-coffee.gif" width="28">
 </h3>
 
+<br>
+
 <div align="center">
-
-<img 
-src="https://gifdb.com/images/high/hyouka-pencil-test-school-bored-kstl858wtmml74uc.webp" 
-width="380"
-/>
-
+  <img 
+    src="https://gifdb.com/images/high/hyouka-pencil-test-school-bored-kstl858wtmml74uc.webp" 
+    width="380"
+  />
 </div>
+
+<br>
 
 ---
 
