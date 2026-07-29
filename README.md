@@ -45,7 +45,7 @@ Current Focus:
   - AI Agents
 
 Learning:
-  - HTM
+  - HTML
   - CSS
   - JavaScript
   - Supabase
