@@ -22,18 +22,6 @@ Aspiring Software Engineer | Turning caffeine into code
 
 ---
 
-<div align="center">
-
-🚀 Passionate about building real-world projects and constantly improving my problem-solving skills.
-
-💻 Currently diving deep into JavaScript fundamentals, AI Agents, and software development.
-
-⚡ I enjoy building things that are both useful and cool.
-
-</div>
-
----
-
 ## 🌟 About Me
 
 ```yaml
