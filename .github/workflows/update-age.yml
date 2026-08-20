@@ -1,0 +1,1001 @@
+name: Update Age
+
+on:
+  schedule:
+    # Every day at 05:35 AM IST
+    - cron: "5 0 * * *"
+
+  workflow_dispatch:
+
+jobs:
+  update-age:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+
+      # ==========================================
+      # CHECKOUT REPOSITORY
+      # ==========================================
+
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+
+      # ==========================================
+      # INSTALL PILLOW
+      # ==========================================
+
+      - name: Install Pillow
+        run: |
+          python3 -m pip install --upgrade pillow
+
+
+      # ==========================================
+      # UPDATE PROFILE + GENERATE TERMINAL CARD
+      # ==========================================
+
+      - name: Update profile and generate terminal card
+        run: |
+
+          python3 << 'PY'
+
+          import json
+          from datetime import date
+
+          from PIL import (
+              Image,
+              ImageDraw,
+              ImageFont,
+              ImageEnhance,
+              ImageOps,
+              ImageFilter
+          )
+
+
+          # ==========================================
+          # DATE CALCULATION
+          # ==========================================
+
+          DOB = date(2006, 9, 27)
+          TODAY = date.today()
+
+          years = TODAY.year - DOB.year
+
+          if (TODAY.month, TODAY.day) < (DOB.month, DOB.day):
+              years -= 1
+
+          last_birthday = date(
+              DOB.year + years,
+              DOB.month,
+              DOB.day
+          )
+
+          months = TODAY.month - last_birthday.month
+
+          if TODAY.day < last_birthday.day:
+              months -= 1
+
+          if months < 0:
+              months += 12
+
+          if TODAY.day >= last_birthday.day:
+
+              days = TODAY.day - last_birthday.day
+
+          else:
+
+              previous_month = TODAY.month - 1
+
+              if previous_month == 0:
+                  previous_month = 12
+                  previous_year = TODAY.year - 1
+
+              else:
+                  previous_year = TODAY.year
+
+              days = (
+                  TODAY -
+                  date(
+                      previous_year,
+                      previous_month,
+                      last_birthday.day
+                  )
+              ).days
+
+          age = f"{years} years, {months} months, {days} days"
+
+
+          # ==========================================
+          # UPDATE profile.json
+          # ==========================================
+
+          with open(
+              "profile.json",
+              "r",
+              encoding="utf-8"
+          ) as file:
+
+              data = json.load(file)
+
+
+          data["age"] = age
+
+
+          with open(
+              "profile.json",
+              "w",
+              encoding="utf-8"
+          ) as file:
+
+              json.dump(
+                  data,
+                  file,
+                  indent=2
+              )
+
+              file.write("\n")
+
+
+          # ==========================================
+          # PROFILE DATA
+          # ==========================================
+
+          name = data["name"]
+          college = data["college"]
+          degree = data["degree"]
+          graduation = str(data["graduation"])
+
+
+          # ==========================================
+          # CANVAS SETTINGS
+          # ==========================================
+
+          WIDTH = 900
+          HEIGHT = 460
+
+          BG = (13, 17, 23)
+
+          WHITE = (240, 246, 252)
+
+          MUTED = (139, 148, 158)
+
+          GREEN = (63, 185, 80)
+
+
+          # ==========================================
+          # TEXT LAYOUT
+          # ==========================================
+
+          TEXT_X = 30
+
+
+          # ==========================================
+          # PHOTO LAYOUT
+          # ==========================================
+
+          # Smaller and more subtle than the previous
+          # version.
+
+          PHOTO_X = 710
+          PHOTO_Y = 108
+
+          PHOTO_WIDTH = 155
+          PHOTO_HEIGHT = 250
+
+
+          # ==========================================
+          # ANIMATION SETTINGS
+          # ==========================================
+
+          FRAME_DURATION = 35
+
+          # Photo begins when the name begins.
+
+          NAME_INDEX = 1
+
+
+          # ==========================================
+          # FONTS
+          # ==========================================
+
+          FONT_PATH = (
+              "/usr/share/fonts/truetype/dejavu/"
+              "DejaVuSansMono.ttf"
+          )
+
+          BOLD_FONT_PATH = (
+              "/usr/share/fonts/truetype/dejavu/"
+              "DejaVuSansMono-Bold.ttf"
+          )
+
+
+          FONT_SMALL = ImageFont.truetype(
+              FONT_PATH,
+              15
+          )
+
+          FONT_NORMAL = ImageFont.truetype(
+              FONT_PATH,
+              17
+          )
+
+          FONT_LARGE = ImageFont.truetype(
+              BOLD_FONT_PATH,
+              27
+          )
+
+
+          # ==========================================
+          # TERMINAL CONTENT
+          # ==========================================
+
+          lines = [
+
+              ("> whoami", "command"),
+
+              (name, "name"),
+
+              (
+                  "COMPUTER SCIENCE / DEVELOPER / CODER",
+                  "muted"
+              ),
+
+              ("> cat profile.json", "command"),
+
+              ("{", "json"),
+
+              (
+                  f'  "age"        : "{age}"',
+                  "json"
+              ),
+
+              (
+                  f'  "college"    : "{college}"',
+                  "json"
+              ),
+
+              (
+                  f'  "degree"     : "{degree}"',
+                  "json"
+              ),
+
+              (
+                  f'  "graduation" : {graduation}',
+                  "json"
+              ),
+
+              ("}", "json"),
+
+              ("> access", "command"),
+
+              ("[ GRANTED ]", "online"),
+
+              ("> _", "command")
+          ]
+
+
+          # ==========================================
+          # PREPARE PROFILE PHOTO
+          # ==========================================
+
+          original_photo = Image.open(
+              "profile-photo.jpg"
+          ).convert("RGB")
+
+
+          original_photo = ImageOps.fit(
+              original_photo,
+              (
+                  PHOTO_WIDTH,
+                  PHOTO_HEIGHT
+              ),
+              method=Image.Resampling.LANCZOS,
+              centering=(0.5, 0.45)
+          )
+
+
+          # ==========================================
+          # CONVERT PHOTO INTO TERMINAL STYLE
+          # ==========================================
+
+          photo_gray = ImageOps.grayscale(
+              original_photo
+          )
+
+
+          photo_gray = ImageEnhance.Contrast(
+              photo_gray
+          ).enhance(1.30)
+
+
+          photo_gray = ImageEnhance.Brightness(
+              photo_gray
+          ).enhance(0.88)
+
+
+          photo_terminal = ImageOps.colorize(
+              photo_gray,
+              black=(3, 12, 6),
+              white=(48, 175, 62)
+          )
+
+
+          # ==========================================
+          # SCANLINES
+          # ==========================================
+
+          photo_draw = ImageDraw.Draw(
+              photo_terminal
+          )
+
+
+          for y in range(
+              0,
+              PHOTO_HEIGHT,
+              5
+          ):
+
+              photo_draw.line(
+                  (
+                      0,
+                      y,
+                      PHOTO_WIDTH,
+                      y
+                  ),
+                  fill=(5, 45, 16),
+                  width=1
+              )
+
+
+          # ==========================================
+          # PHOTO SOFT EDGE MASK
+          # ==========================================
+
+          # Creates the faded terminal/hologram look
+          # instead of a hard rectangular image.
+
+          def create_soft_mask(
+              width,
+              height
+          ):
+
+              mask = Image.new(
+                  "L",
+                  (
+                      width,
+                      height
+                  ),
+                  0
+              )
+
+
+              pixels = mask.load()
+
+
+              edge_x = max(
+                  1,
+                  int(width * 0.18)
+              )
+
+
+              edge_y = max(
+                  1,
+                  int(height * 0.12)
+              )
+
+
+              for y in range(height):
+
+                  for x in range(width):
+
+                      horizontal = min(
+                          x,
+                          width - 1 - x
+                      )
+
+
+                      vertical = min(
+                          y,
+                          height - 1 - y
+                      )
+
+
+                      horizontal_factor = min(
+                          1.0,
+                          horizontal / edge_x
+                      )
+
+
+                      vertical_factor = min(
+                          1.0,
+                          vertical / edge_y
+                      )
+
+
+                      alpha = int(
+                          255 *
+                          horizontal_factor *
+                          vertical_factor
+                      )
+
+
+                      # Keep the center slightly transparent.
+                      alpha = int(
+                          alpha * 0.78
+                      )
+
+
+                      pixels[x, y] = alpha
+
+
+              # Smooth the mask.
+
+              mask = mask.filter(
+                  ImageFilter.GaussianBlur(2)
+              )
+
+
+              return mask
+
+
+          PHOTO_MASK = create_soft_mask(
+              PHOTO_WIDTH,
+              PHOTO_HEIGHT
+          )
+
+
+          # ==========================================
+          # PHOTO REVEAL
+          # ==========================================
+
+          def paste_photo(
+              image,
+              progress
+          ):
+
+              if progress <= 0:
+                  return
+
+
+              progress = max(
+                  0.0,
+                  min(
+                      1.0,
+                      progress
+                  )
+              )
+
+
+              visible_height = int(
+                  PHOTO_HEIGHT * progress
+              )
+
+
+              if visible_height <= 0:
+                  return
+
+
+              # ======================================
+              # CROP TOP → BOTTOM
+              # ======================================
+
+              visible_photo = photo_terminal.crop(
+                  (
+                      0,
+                      0,
+                      PHOTO_WIDTH,
+                      visible_height
+                  )
+              )
+
+
+              visible_mask = PHOTO_MASK.crop(
+                  (
+                      0,
+                      0,
+                      PHOTO_WIDTH,
+                      visible_height
+                  )
+              )
+
+
+              # ======================================
+              # VERY SUBTLE GREEN GLOW
+              # ======================================
+
+              glow_mask = visible_mask.filter(
+                  ImageFilter.GaussianBlur(8)
+              )
+
+
+              glow_alpha = glow_mask.point(
+                  lambda value: int(
+                      value * 0.12
+                  )
+              )
+
+
+              glow = Image.new(
+                  "RGBA",
+                  (
+                      PHOTO_WIDTH,
+                      visible_height
+                  ),
+                  (63, 185, 80, 0)
+              )
+
+
+              glow.putalpha(
+                  glow_alpha
+              )
+
+
+              # ======================================
+              # PHOTO ALPHA
+              # ======================================
+
+              visible_photo = (
+                  visible_photo.convert("RGBA")
+              )
+
+
+              visible_photo.putalpha(
+                  visible_mask
+              )
+
+
+              # ======================================
+              # COMPOSITE GLOW
+              # ======================================
+
+              image_rgba = image.convert(
+                  "RGBA"
+              )
+
+
+              image_rgba.alpha_composite(
+                  glow,
+                  (
+                      PHOTO_X,
+                      PHOTO_Y
+                  )
+              )
+
+
+              # ======================================
+              # COMPOSITE PHOTO
+              # ======================================
+
+              image_rgba.alpha_composite(
+                  visible_photo,
+                  (
+                      PHOTO_X,
+                      PHOTO_Y
+                  )
+              )
+
+
+              # ======================================
+              # VERY SUBTLE TERMINAL FRAME
+              # ======================================
+
+              if progress >= 1.0:
+
+                  frame_layer = Image.new(
+                      "RGBA",
+                      image_rgba.size,
+                      (0, 0, 0, 0)
+                  )
+
+
+                  frame_draw = ImageDraw.Draw(
+                      frame_layer
+                  )
+
+
+                  frame_draw.rectangle(
+                      (
+                          PHOTO_X - 2,
+                          PHOTO_Y - 2,
+                          PHOTO_X + PHOTO_WIDTH + 1,
+                          PHOTO_Y + PHOTO_HEIGHT + 1
+                      ),
+                      outline=(
+                          63,
+                          185,
+                          80,
+                          28
+                      ),
+                      width=1
+                  )
+
+
+                  frame_layer = frame_layer.filter(
+                      ImageFilter.GaussianBlur(0.5)
+                  )
+
+
+                  image_rgba.alpha_composite(
+                      frame_layer
+                  )
+
+
+              image.paste(
+                  image_rgba.convert("RGB")
+              )
+
+
+          # ==========================================
+          # FRAME RENDERER
+          # ==========================================
+
+          def create_frame(
+              visible_text,
+              photo_progress
+          ):
+
+              image = Image.new(
+                  "RGB",
+                  (
+                      WIDTH,
+                      HEIGHT
+                  ),
+                  BG
+              )
+
+
+              draw = ImageDraw.Draw(
+                  image
+              )
+
+
+              # ======================================
+              # TERMINAL HEADER
+              # ======================================
+
+              draw.text(
+                  (28, 20),
+                  "BHAT_OS v1.0",
+                  font=FONT_SMALL,
+                  fill=MUTED
+              )
+
+
+              draw.text(
+                  (
+                      WIDTH // 2,
+                      20
+                  ),
+                  "TERMINAL",
+                  font=FONT_SMALL,
+                  fill=MUTED,
+                  anchor="ma"
+              )
+
+
+              draw.text(
+                  (
+                      WIDTH - 28,
+                      20
+                  ),
+                  "ACTIVE",
+                  font=FONT_SMALL,
+                  fill=GREEN,
+                  anchor="ra"
+              )
+
+
+              # ======================================
+              # PHOTO
+              # ======================================
+
+              paste_photo(
+                  image,
+                  photo_progress
+              )
+
+
+              # ======================================
+              # TERMINAL TEXT
+              # ======================================
+
+              y = 72
+
+
+              for index, (_, kind) in enumerate(lines):
+
+                  if index >= len(visible_text):
+                      break
+
+
+                  current_text = visible_text[index]
+
+
+                  if kind == "name":
+
+                      font = FONT_LARGE
+                      color = WHITE
+                      spacing = 45
+
+
+                  elif kind == "muted":
+
+                      font = FONT_SMALL
+                      color = MUTED
+                      spacing = 31
+
+
+                  elif kind == "command":
+
+                      font = FONT_NORMAL
+                      color = GREEN
+                      spacing = 32
+
+
+                  elif kind == "online":
+
+                      font = FONT_NORMAL
+                      color = GREEN
+                      spacing = 32
+
+
+                  else:
+
+                      font = FONT_NORMAL
+                      color = WHITE
+                      spacing = 31
+
+
+                  draw.text(
+                      (
+                          TEXT_X,
+                          y
+                      ),
+                      current_text,
+                      font=font,
+                      fill=color
+                  )
+
+
+                  y += spacing
+
+
+              return image
+
+
+          # ==========================================
+          # DETERMINE PHOTO TIMELINE
+          # ==========================================
+
+          remaining_character_frames = 0
+
+
+          for index in range(
+              NAME_INDEX,
+              len(lines)
+          ):
+
+              remaining_character_frames += len(
+                  lines[index][0]
+              )
+
+              remaining_character_frames += 2
+
+
+          remaining_character_frames = max(
+              1,
+              remaining_character_frames
+          )
+
+
+          # ==========================================
+          # GENERATE ANIMATION
+          # ==========================================
+
+          frames = []
+
+
+          # ==========================================
+          # INITIAL FRAME
+          # ==========================================
+
+          frames.append(
+              create_frame(
+                  [],
+                  0.0
+              )
+          )
+
+
+          # ==========================================
+          # PHOTO TIMELINE
+          # ==========================================
+
+          photo_frame_counter = 0
+
+
+          # ==========================================
+          # TYPE TERMINAL
+          # ==========================================
+
+          for line_index, (
+              text,
+              kind
+          ) in enumerate(lines):
+
+
+              visible = [
+                  lines[i][0]
+                  for i in range(
+                      line_index
+                  )
+              ]
+
+
+              visible.append("")
+
+
+              # ======================================
+              # TYPE CURRENT LINE
+              # ======================================
+
+              for character_index in range(
+                  1,
+                  len(text) + 1
+              ):
+
+                  visible[-1] = (
+                      text[
+                          :character_index
+                      ]
+                  )
+
+
+                  # ==================================
+                  # PHOTO TIMELINE
+                  # ==================================
+
+                  if line_index >= NAME_INDEX:
+
+                      photo_frame_counter += 1
+
+
+                      photo_progress = min(
+                          1.0,
+                          photo_frame_counter
+                          /
+                          remaining_character_frames
+                      )
+
+                  else:
+
+                      photo_progress = 0.0
+
+
+                  frame = create_frame(
+                      visible.copy(),
+                      photo_progress
+                  )
+
+
+                  frames.append(
+                      frame
+                  )
+
+
+              # ======================================
+              # PAUSE AFTER LINE
+              # ======================================
+
+              if line_index >= NAME_INDEX:
+
+                  photo_frame_counter += 2
+
+
+                  photo_progress = min(
+                      1.0,
+                      photo_frame_counter
+                      /
+                      remaining_character_frames
+                  )
+
+              else:
+
+                  photo_progress = 0.0
+
+
+              finished_frame = create_frame(
+                  visible.copy(),
+                  photo_progress
+              )
+
+
+              for _ in range(2):
+
+                  frames.append(
+                      finished_frame
+                  )
+
+
+          # ==========================================
+          # FINAL FRAME
+          # ==========================================
+
+          final_frame = create_frame(
+              [
+                  line[0]
+                  for line in lines
+              ],
+              1.0
+          )
+
+
+          # ==========================================
+          # HOLD FINAL FRAME
+          # ==========================================
+
+          for _ in range(35):
+
+              frames.append(
+                  final_frame
+              )
+
+
+          # ==========================================
+          # SAVE GIF
+          # ==========================================
+
+          frames[0].save(
+              "profile-card.gif",
+              save_all=True,
+              append_images=frames[1:],
+              duration=FRAME_DURATION,
+              optimize=True
+          )
+
+
+          # ==========================================
+          # LOG
+          # ==========================================
+
+          print(
+              "Terminal profile card generated successfully."
+          )
+
+          print(
+              f"Generated {len(frames)} frames."
+          )
+
+          print(
+              f"Updated age: {age}"
+          )
+
+          print(
+              "Photo reveal synchronized with "
+              "terminal text animation."
+          )
+
+
+          PY
+
+
+      # ==========================================
+      # COMMIT UPDATED PROFILE
+      # ==========================================
+
+      - name: Commit updated profile
+        run: |
+
+          git config user.name "Chinmay Bhat"
+
+          git config user.email "bhatchinmay172@gmail.com"
+
+          git add profile.json profile-card.gif
+
+          git diff --cached --quiet || \
+              git commit -m "Update profile"
+
+          git push

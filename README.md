@@ -1,4 +1,4 @@
-<h1 align="center">
+<!-- <h1 align="center">
 Hey there 
 <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35">
 I'm Chinmay
@@ -18,7 +18,11 @@ Aspiring Software Engineer | Turning caffeine into code
   />
 </div>
 
-<br>
+<br> -->
+
+<p align="center">
+  <img src="./profile-card.gif" alt="Chinmay Bhat terminal profile">
+</p>
 
 ---
 
