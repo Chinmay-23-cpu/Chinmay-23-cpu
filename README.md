@@ -111,7 +111,8 @@ A <b>global threat monitoring system</b> monitoring world events within a <b>24-
 
 <div align="center">
 
-<img src="https://github-readme-streak-stats.herokuapp.com?user=Chinmay-23-cpu&theme=tokyonight&hide_border=true" />
+<!-- <img src="https://github-readme-streak-stats.herokuapp.com?user=Chinmay-23-cpu&theme=tokyonight&hide_border=true" /> -->
+<img src="https://streak-stats.demolab.com/?user=Chinmay-23-cpu&theme=tokyonight&hide_border=true" />
 
 <br><br>
 
