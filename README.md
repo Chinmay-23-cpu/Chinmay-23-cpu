@@ -26,29 +26,6 @@ Aspiring Software Engineer | Turning caffeine into code
 
 ---
 
-## 🌟 About Me
-
-```yaml
-Name: Chinmay Bhat
-Role: Aspiring Software Engineer
-Current Focus:
-  - JavaScript Fundamentals
-  - Problem Solving
-  - AI Agents
-
-Learning:
-  - HTML
-  - CSS
-  - JavaScript
-  - Supabase
-  - SQL
-  - Java
-  - DSA
-  - Git/GitHub
-````
-
----
-
 ## 🛠️ Tech Stack
 
 ### Languages
