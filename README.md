@@ -132,7 +132,7 @@ A <b>global threat monitoring system</b> monitoring world events within a <b>24-
 <tr>
 <td align="center">
 
-<img src="https://streak-stats.demolab.com/?user=Chinmay-23-cpu&theme=tokyonight&hide_border=true" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Chinmay-23-cpu&theme=tokyonight" />
 
 </td>
 
