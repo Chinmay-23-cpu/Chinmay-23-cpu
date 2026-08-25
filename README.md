@@ -59,46 +59,64 @@ Aspiring Software Engineer | Turning caffeine into code
 <table>
 <tr>
 
-<td width="33%" valign="top" align="center">
-
+<td width="33%" align="center">
 <img src="./assets/457245622-cf11104f-a825-432d-9901-a7b16d2de7df.png" width="90%" height="180"/>
-
-<h3>Smart Dictionary</h3>
-
-<p align="center">
-A student-friendly <b>offline dictionary desktop application</b> built using <b>Python + CustomTkinter</b>.
-</p>
-
-🔗 <a href="https://github.com/Chinmay-23-cpu/Smart-Dictionary">Repo</a>
-
 </td>
 
-<td width="33%" valign="top" align="center">
-
+<td width="33%" align="center">
 <img src="./assets/Screenshot 2025-12-04 163100.png" width="90%" height="180"/>
-
-<h3>AgriSmart</h3>
-
-<p align="center">
-A platform designed for <b>farmers</b>, making agricultural resources more accessible.
-</p>
-
-🔗 <a href="https://github.com/Chinmay-23-cpu/AgriSmart">Repo</a>
-
 </td>
 
-<td width="33%" valign="top" align="center">
-
+<td width="33%" align="center">
 <img src="./assets/Untitled.jpeg" width="90%" height="180"/>
+</td>
 
+</tr>
+
+<tr>
+
+<td align="center">
+<h3>Smart Dictionary</h3>
+</td>
+
+<td align="center">
+<h3>AgriSmart</h3>
+</td>
+
+<td align="center">
 <h3>Global Monitoring System</h3>
+</td>
 
-<p align="center">
+</tr>
+
+<tr>
+
+<td align="center">
+A student-friendly <b>offline dictionary desktop application</b> built using <b>Python + CustomTkinter</b>.
+</td>
+
+<td align="center">
+A platform designed for <b>farmers</b>, making agricultural resources more accessible.
+</td>
+
+<td align="center">
 A <b>global threat monitoring system</b> monitoring world events within a <b>24-hour timeframe</b>.
-</p>
+</td>
 
+</tr>
+
+<tr>
+
+<td align="center">
+🔗 <a href="https://github.com/Chinmay-23-cpu/Smart-Dictionary">Repo</a>
+</td>
+
+<td align="center">
+🔗 <a href="https://github.com/Chinmay-23-cpu/AgriSmart">Repo</a>
+</td>
+
+<td align="center">
 🔗 <a href="https://github.com/Chinmay-23-cpu/globalthreat2.0">Repo</a>
-
 </td>
 
 </tr>
