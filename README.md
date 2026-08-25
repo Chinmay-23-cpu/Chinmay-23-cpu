@@ -26,7 +26,7 @@ Aspiring Software Engineer | Turning caffeine into code
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 
 
@@ -54,7 +54,7 @@ Aspiring Software Engineer | Turning caffeine into code
 
 ---
 
-## 🚀 Featured Projects
+## Featured Projects
 
 <table>
 <tr>
@@ -63,7 +63,7 @@ Aspiring Software Engineer | Turning caffeine into code
 
 <img src="./assets/457245622-cf11104f-a825-432d-9901-a7b16d2de7df.png" width="90%" height="180"/>
 
-<h3>📘 Smart Dictionary</h3>
+<h3>Smart Dictionary</h3>
 
 <p align="center">
 A student-friendly <b>offline dictionary desktop application</b> built using <b>Python + CustomTkinter</b>.
@@ -77,7 +77,7 @@ A student-friendly <b>offline dictionary desktop application</b> built using <b>
 
 <img src="./assets/Screenshot 2025-12-04 163100.png" width="90%" height="180"/>
 
-<h3>🌾 AgriSmart</h3>
+<h3>AgriSmart</h3>
 
 <p align="center">
 A platform designed for <b>farmers</b>, making agricultural resources more accessible.
@@ -91,7 +91,7 @@ A platform designed for <b>farmers</b>, making agricultural resources more acces
 
 <img src="./assets/Untitled.jpeg" width="90%" height="180"/>
 
-<h3>🌍 Global Monitoring System</h3>
+<h3>Global Monitoring System</h3>
 
 <p align="center">
 A <b>global threat monitoring system</b> monitoring world events within a <b>24-hour timeframe</b>.
@@ -106,7 +106,7 @@ A <b>global threat monitoring system</b> monitoring world events within a <b>24-
 
 ---
 
-## 📊 GitHub Analytics
+## GitHub Analytics
 
 <div align="center">
 
@@ -130,7 +130,7 @@ A <b>global threat monitoring system</b> monitoring world events within a <b>24-
 
 ---
 
-## 🌐 Connect With Me
+## Connect With Me
 
 <div align="center">
 
