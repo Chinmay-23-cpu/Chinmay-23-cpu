@@ -141,6 +141,10 @@ A <b>global threat monitoring system</b> monitoring world events within a <b>24-
 <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
 </a>
 
+<a href="https://discord.com/users/1440697836303024139">
+<img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white"/>
+</a>
+
 <br><br>
 
 <img src="https://komarev.com/ghpvc/?username=Chinmay-23-cpu&label=Profile%20Views&color=8A2BE2&style=for-the-badge" />
