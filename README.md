@@ -110,15 +110,23 @@ A <b>global threat monitoring system</b> monitoring world events within a <b>24-
 
 <div align="center">
 
-<!-- <img src="https://github-readme-streak-stats.herokuapp.com?user=Chinmay-23-cpu&theme=tokyonight&hide_border=true" /> -->
+<table>
+<tr>
+<td align="center">
+
 <img src="https://streak-stats.demolab.com/?user=Chinmay-23-cpu&theme=tokyonight&hide_border=true" />
 
-<br><br>
+</td>
+
+<td align="center">
 
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Chinmay-23-cpu&theme=tokyonight" />
 
-</div>
+</td>
+</tr>
+</table>
 
+</div>
 ---
 
 ## 🌐 Connect With Me
