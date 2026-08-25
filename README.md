@@ -28,21 +28,20 @@ Aspiring Software Engineer | Turning caffeine into code
 
 ## 🛠️ Tech Stack
 
-### Languages
+
 
 <p>
-<img src="https://skillicons.dev/icons?i=html,css,js,java,c,cpp,python" />
+<img src="https://skillicons.dev/icons?i=html,css,js,java,c,cpp,python,mysql,supabase,git,github" />
 </p>
 
-### Databases
 
-<p>
+
+<!-- <p>
 <img src="https://skillicons.dev/icons?i=mysql,supabase" />
-</p>
+</p> -->
 
-### Tools & Platforms
 
-<p>
+<!-- <p>
   <img src="https://skillicons.dev/icons?i=git,github,vscode,vercel" />
   <img 
     src="https://media.licdn.com/dms/image/v2/D560BAQG5wmEaqHfmDg/company-logo_200_200/B56ZqUSJh0I4AM-/0/1763424377586/google_antigravity_logo?e=2147483647&v=beta&t=09EGMp77uIgS77oquLNRli_4mMEV8oGvXklIXLBP6YM"
@@ -51,7 +50,7 @@ Aspiring Software Engineer | Turning caffeine into code
     alt="Antigravity"
     style="vertical-align: middle; border-radius: 12px;"
   />
-</p>
+</p> -->
 
 ---
 
