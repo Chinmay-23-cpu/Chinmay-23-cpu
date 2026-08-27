@@ -81,7 +81,7 @@ Aspiring Software Engineer | Turning caffeine into code
 </td>
 
 <td align="center">
-<h3>AgriSmart</h3>
+<h3>SimpleTimer</h3>
 </td>
 
 <td align="center">
@@ -97,7 +97,7 @@ A student-friendly <b>offline dictionary desktop application</b> built using <b>
 </td>
 
 <td align="center">
-A platform designed for <b>farmers</b>, making agricultural resources more accessible.
+A simple timer designed as a part of <b>tutorial</b>, for practice purpose.
 </td>
 
 <td align="center">
@@ -113,7 +113,7 @@ A <b>global threat monitoring system</b> monitoring world events within a <b>24-
 </td>
 
 <td align="center">
-🔗 <a href="https://github.com/Chinmay-23-cpu/AgriSmart">Repo</a>
+🔗 <a href="https://github.com/Chinmay-23-cpu/DOMpractice/tree/main/SimpleTimer">Repo</a>
 </td>
 
 <td align="center">
