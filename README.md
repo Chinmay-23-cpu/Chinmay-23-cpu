@@ -21,7 +21,8 @@ Aspiring Software Engineer | Turning caffeine into code
 <br> -->
 
 <p align="center">
-  <img src="./profile-card.gif" alt="Chinmay Bhat terminal profile">
+  <img src="https://raw.githubusercontent.com/Chinmay-23-cpu/Chinmay-23-cpu/main/profile-card.gif?v=1"
+       alt="Chinmay Bhat terminal profile">
 </p>
 
 ---
