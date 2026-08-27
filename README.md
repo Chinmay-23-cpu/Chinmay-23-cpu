@@ -65,7 +65,7 @@ Aspiring Software Engineer | Turning caffeine into code
 </td>
 
 <td width="33%" align="center">
-<img src="./assets/Screenshot 2025-12-04 163100.png" width="90%" height="180"/>
+<img src="./assets/Timer.png" width="90%" height="180"/>
 </td>
 
 <td width="33%" align="center">
