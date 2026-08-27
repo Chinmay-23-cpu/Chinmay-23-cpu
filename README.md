@@ -72,6 +72,10 @@ Aspiring Software Engineer | Turning caffeine into code
 <img src="./assets/Untitled.jpeg" width="90%" height="180"/>
 </td>
 
+<td width="33%" align="center">
+<img src="./assets/youtube.png" width="90%" height="180"/>
+</td>
+
 </tr>
 
 <tr>
@@ -86,6 +90,10 @@ Aspiring Software Engineer | Turning caffeine into code
 
 <td align="center">
 <h3>Global Monitoring System</h3>
+</td>
+
+<td align="center">
+<h3>Youtube Clone</h3>
 </td>
 
 </tr>
@@ -104,6 +112,10 @@ A simple timer designed as a part of <b>tutorial</b>, for practice purpose.
 A <b>global threat monitoring system</b> monitoring world events within a <b>24-hour timeframe</b>.
 </td>
 
+<td align="center">
+A <b>HTML CSS project</b> clone of youtube <b>as part of my HTML/CSS practice</b>.
+</td>
+
 </tr>
 
 <tr>
@@ -119,6 +131,11 @@ A <b>global threat monitoring system</b> monitoring world events within a <b>24-
 <td align="center">
 🔗 <a href="https://github.com/Chinmay-23-cpu/globalthreat2.0">Repo</a>
 </td>
+
+<td align="center">
+🔗 <a href="https://github.com/Chinmay-23-cpu/YoutubeClone-HTML-CSS-">Repo</a>
+</td>
+
 
 </tr>
 </table>
