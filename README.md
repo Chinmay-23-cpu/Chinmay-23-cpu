@@ -55,7 +55,7 @@ Aspiring Software Engineer | Turning caffeine into code
 
 ---
 
-## Featured Projects
+## Featured Projects & MiniProjects
 
 <table>
 <tr>
