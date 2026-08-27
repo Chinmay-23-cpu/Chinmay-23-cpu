@@ -62,10 +62,26 @@ jobs:
           DOB = date(2006, 9, 27)
           TODAY = date.today()
 
+
+          # ------------------------------------------
+          # Calculate completed years
+          # ------------------------------------------
+
           years = TODAY.year - DOB.year
 
-          if (TODAY.month, TODAY.day) < (DOB.month, DOB.day):
+          birthday_this_year = date(
+              TODAY.year,
+              DOB.month,
+              DOB.day
+          )
+
+          if TODAY < birthday_this_year:
               years -= 1
+
+
+          # ------------------------------------------
+          # Calculate remaining months and days
+          # ------------------------------------------
 
           last_birthday = date(
               DOB.year + years,
@@ -73,37 +89,43 @@ jobs:
               DOB.day
           )
 
-          months = TODAY.month - last_birthday.month
+          months = 0
+          current_date = last_birthday
 
-          if TODAY.day < last_birthday.day:
-              months -= 1
 
-          if months < 0:
-              months += 12
+          while True:
 
-          if TODAY.day >= last_birthday.day:
+              if current_date.month == 12:
 
-              days = TODAY.day - last_birthday.day
-
-          else:
-
-              previous_month = TODAY.month - 1
-
-              if previous_month == 0:
-                  previous_month = 12
-                  previous_year = TODAY.year - 1
+                  next_month = date(
+                      current_date.year + 1,
+                      1,
+                      current_date.day
+                  )
 
               else:
-                  previous_year = TODAY.year
 
-              days = (
-                  TODAY -
-                  date(
-                      previous_year,
-                      previous_month,
-                      last_birthday.day
+                  next_month = date(
+                      current_date.year,
+                      current_date.month + 1,
+                      current_date.day
                   )
-              ).days
+
+
+              if next_month <= TODAY:
+
+                  months += 1
+                  current_date = next_month
+
+              else:
+
+                  break
+
+
+          days = (
+              TODAY - current_date
+          ).days
+
 
           age = f"{years} years, {months} months, {days} days"
 
@@ -175,9 +197,6 @@ jobs:
           # ==========================================
           # PHOTO LAYOUT
           # ==========================================
-
-          # Smaller and more subtle than the previous
-          # version.
 
           PHOTO_X = 710
           PHOTO_Y = 108
@@ -354,9 +373,6 @@ jobs:
           # PHOTO SOFT EDGE MASK
           # ==========================================
 
-          # Creates the faded terminal/hologram look
-          # instead of a hard rectangular image.
-
           def create_soft_mask(
               width,
               height
@@ -423,6 +439,7 @@ jobs:
 
 
                       # Keep the center slightly transparent.
+
                       alpha = int(
                           alpha * 0.78
                       )
