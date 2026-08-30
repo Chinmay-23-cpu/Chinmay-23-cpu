@@ -31,8 +31,12 @@ Aspiring Software Engineer | Turning caffeine into code
 
 
 
-<p>
+<!-- <p>
 <img src="https://skillicons.dev/icons?i=html,css,js,java,c,cpp,python,mysql,supabase,git,github,yaml" />
+</p> -->
+
+<p>
+  <img src="https://skills.syvixor.com/api/icons?i=html,css,js,java,c,cpp,python,mysql,supabase,git,github,yaml"/>
 </p>
 
 
