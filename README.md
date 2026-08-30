@@ -27,13 +27,15 @@ Aspiring Software Engineer | Turning caffeine into code
 
 ---
 
-## Tech Stack
+## Skills
 
 
 
  <p>
 <img src="https://skillicons.dev/icons?i=html,css,js,java,c,cpp,python,mysql,supabase,git,github" />
-<img src="https://skills.syvixor.com/api/icons?i=yaml,Github Actions"/>
+<img src="https://skills.syvixor.com/api/icons?i=yaml"/>
+<img src="https://skills.syvixor.com/api/icons?i=githubactions"/>
+<img src="https://skills.syvixor.com/api/icons?i=leetcode&perline=12&radius=40" alt="Skill Icons" />
 </p> 
 
 
