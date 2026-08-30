@@ -32,7 +32,7 @@ Aspiring Software Engineer | Turning caffeine into code
 
 
 <p>
-<img src="https://skillicons.dev/icons?i=html,css,js,java,c,cpp,python,mysql,supabase,git,github,YAML" />
+<img src="https://skillicons.dev/icons?i=html,css,js,java,c,cpp,python,mysql,supabase,git,github,yaml" />
 </p>
 
 
