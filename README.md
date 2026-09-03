@@ -68,7 +68,7 @@ Aspiring Software Engineer | Turning caffeine into code
 <tr>
 <td align="center">
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Chinmay-23-cpu&theme=tokyonight" />
+<a href="https://git.io/streak-stats"><img src="./profile/streak.svg" alt="GitHub Streak" /></a>
 
 </td>
 
