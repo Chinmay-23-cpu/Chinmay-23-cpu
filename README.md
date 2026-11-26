@@ -32,10 +32,9 @@ Aspiring Software Engineer | Turning caffeine into code
 
 
  <p>
-<img src="https://skillicons.dev/icons?i=html,css,js,java,c,python,mysql,supabase,git,github,react,tailwindcss" />
-<img src="https://skills.syvixor.com/api/icons?i=yaml"/>
+<img src="https://skillicons.dev/icons?i=html,css,js,java,c,python,postgresql,git,react,tailwindcss,postman,express" />
+<img src="https://skills.syvixor.com/api/icons?i=yaml,node"/>
 <img src="https://skills.syvixor.com/api/icons?i=githubactions"/>
-<img src="https://skills.syvixor.com/api/icons?i=leetcode&perline=12&radius=40" alt="Skill Icons" />
 </p> 
 
 
